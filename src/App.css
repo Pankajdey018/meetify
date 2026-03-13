@@ -1,0 +1,241 @@
+/* ---------- GLOBAL ---------- */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.landingPageContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("/background.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ---------- WRAPPER ---------- */
+.pageWrapper {
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ---------- NAV ---------- */
+nav {
+  padding: 1.6rem 2rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h2 {
+  letter-spacing: 0.4px;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.navList p {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.navList div[role="button"] {
+  background: linear-gradient(135deg, #ff9839, #d97500);
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+}
+
+/* ---------- FEATURES ---------- */
+.featureStrip {
+  margin: 0 2rem 1.6rem;
+  padding: 1.1rem 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s ease;
+}
+
+.featureStrip:hover {
+  box-shadow: 0 0 30px rgba(255, 152, 57, 0.25);
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: transform 0.25s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-3px);
+}
+
+.featureItem svg {
+  color: #ff9839;
+  font-size: 1.35rem;
+  animation: iconPulse 2.8s ease-in-out infinite;
+}
+
+/* subtle idle animation */
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ---------- HERO ---------- */
+.landingMainContainer {
+  min-height: calc(100vh - 190px);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.landingMainContainer h1 {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.landingMainContainer p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin: 1.1rem 0 2.2rem;
+}
+
+.accent {
+  color: #ff9839;
+}
+
+/* CTA */
+.landingMainContainer div[role="button"] {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #ff9839, #d97500);
+  border-radius: 999px;
+}
+
+.landingMainContainer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ---------- IMAGE ---------- */
+.imageWrapper {
+  position: relative;
+}
+
+.imageWrapper img {
+  height: 72vh;
+  width: auto;
+}
+
+/* ---------- ONLINE STATUS DOT ---------- */
+.statusDot {
+  position: absolute;
+  top: 12%;
+  right: 18%;
+  width: 12px;
+  height: 12px;
+  background: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.9);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .landingMainContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featureStrip {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .navList p {
+    display: none;
+  }
+
+  .imageWrapper img {
+    height: 55vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .pageWrapper {
+    border: none;
+  }
+
+  .landingMainContainer h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #0f172a;
+  color: white;
+  margin-top: 80px;
+  padding-top: 40px;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footerContainer h3,
+.footerContainer h4 {
+  margin-bottom: 10px;
+}
+
+.footerContainer p {
+  margin: 6px 0;
+  color: #cbd5e1;
+}
+
+.footerBottom {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #334155;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.footerContact a {
+  color: #ff9839;
+  text-decoration: none;
+}
+
+.footerContact a:hover {
+  text-decoration: underline;
+}
